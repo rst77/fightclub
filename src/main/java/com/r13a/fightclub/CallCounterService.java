@@ -1,18 +1,13 @@
 package com.r13a.fightclub;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import io.micronaut.context.annotation.DefaultImplementation;
+import io.micronaut.core.annotation.NonNull;
 
-import jakarta.inject.Singleton;
+@DefaultImplementation(DefaultCallCounterService.class)
+@FunctionalInterface
+public interface CallCounterService {
 
-@Singleton
-public class CallCounterService implements CallCounter {
-
-    private AtomicInteger counter = new AtomicInteger(1);
-
-    @Override
-    public Integer next() {
-        return Integer.valueOf( counter.getAndIncrement() );
-    }
-
+    @NonNull
+    Integer next();
     
 }

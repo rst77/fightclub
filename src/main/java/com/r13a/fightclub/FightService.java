@@ -1,6 +1,5 @@
 package com.r13a.fightclub;
 
-import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import io.micronaut.context.annotation.DefaultImplementation;
@@ -9,7 +8,6 @@ import io.micronaut.core.annotation.NonNull;
 
 
 @DefaultImplementation(DefaultFightService.class)
-@Prototype
 public interface FightService {
 
     @NonNull
