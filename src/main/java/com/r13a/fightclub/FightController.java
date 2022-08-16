@@ -18,13 +18,6 @@ public class FightController {
         this.callCounterService = callCounterService;
     }
 
-
-    @Get
-    public String index() {
-        return "Fight base... \n"; 
-    }
-   
-
     @Get("/{valor}")
     public Resultado fight(@PathVariable String valor ) {
         System.out.println("##########################");
