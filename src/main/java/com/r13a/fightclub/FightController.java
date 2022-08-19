@@ -20,12 +20,14 @@ public class FightController {
 
     @Get("/{valor}")
     public Resultado fight(@PathVariable String valor ) {
-        System.out.println("##########################");
-        System.out.println("Invocado servico /{valor}");
+        //System.out.println("##########################");
+        //System.out.println("Invocado servico /{valor}");
         Resultado resultado = new Resultado( this.callCounterService );
         fightService.fight(valor, resultado);
         resultado.stop();
-        System.out.println("##########################\n\n");
+        //System.out.println("##########################\n\n");
+        if (resultado.getNumeroChamada() % 5000 == 0)
+            System.out.print( resultado.getNumeroChamada() + " " );
         return resultado;
     }
 }

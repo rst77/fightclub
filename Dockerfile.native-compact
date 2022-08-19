@@ -1,0 +1,9 @@
+FROM frolvlad/alpine-glibc:alpine-3.14
+RUN apk add --no-cache upx
+COPY fightclub-0.1 /opt/docker/fightclub-0.1
+WORKDIR /opt/docker
+RUN upx -k -7 fightclub-0.1 -o fightclub-0.1-compacted
+RUN rm fightclub-0.1
+RUN chmod +x /opt/docker/fightclub-0.1-compacted
+CMD ["/opt/docker/fightclub-0.1-compacted"]
+EXPOSE 8080

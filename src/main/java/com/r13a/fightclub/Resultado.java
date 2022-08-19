@@ -56,7 +56,7 @@ public class Resultado {
 
     public Resultado(CallCounterService callCounter) {
 
-        System.out.println("Iniciando classe Resultado...");
+        //System.out.println("Iniciando classe Resultado...");
         // this.callCounter = callCounter;
         this.numeroChamada = callCounter.next();
         this.timeStampInicio = new Timestamp(System.currentTimeMillis()).toInstant();

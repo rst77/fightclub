@@ -1,0 +1,4 @@
+FROM ghcr.io/graalvm/jdk:22.2.0
+COPY target/fightclub-0.1.jar /opt/docker/fightclub-0.1.jar
+CMD ["java","-jar","/opt/docker/fightclub-0.1.jar"]
+EXPOSE 8080
